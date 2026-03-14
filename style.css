@@ -6,6 +6,11 @@
   --border: #dbe3ee;
   --shadow: 0 8px 24px rgba(20, 32, 51, 0.06);
   --radius: 16px;
+
+  --low: #0f766e;
+  --moderate: #b45309;
+  --elevated: #c2410c;
+  --high: #b42318;
 }
 
 * {
@@ -20,14 +25,15 @@ body {
 }
 
 .tool-shell {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.hero,
+.hero-card,
 .stat-card,
 .chart-card,
+.info-card,
 .methodology-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -35,85 +41,203 @@ body {
   box-shadow: var(--shadow);
 }
 
-.hero {
-  padding: 24px;
+.hero-card {
+  padding: 26px;
   margin-bottom: 18px;
 }
 
 .eyebrow {
   margin: 0 0 8px;
   font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-weight: 700;
+  color: var(--muted);
 }
 
-.hero h1 {
+.hero-card h1 {
   margin: 0 0 10px;
-  font-size: 32px;
+  font-size: 34px;
+  line-height: 1.15;
 }
 
 .hero-text {
   margin: 0;
+  max-width: 760px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.65;
+  font-size: 16px;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-bottom: 18px;
 }
 
 .stat-card {
   padding: 18px;
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.label {
+.stat-card-primary {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.stat-label {
   display: block;
   font-size: 13px;
   color: var(--muted);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.stat-card strong {
-  font-size: 28px;
+.stat-value {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text);
 }
 
-.chart-card,
-.methodology-card {
+.stat-value-small {
+  font-size: 22px;
+}
+
+.chart-card {
   padding: 20px;
   margin-bottom: 18px;
+}
+
+.section-head {
+  margin-bottom: 14px;
+}
+
+.section-head h2 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .chart-wrap {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 420px;
 }
 
-.methodology-card p {
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.info-card {
+  padding: 20px;
+}
+
+.info-card h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.info-card p {
+  margin: 0;
   color: var(--muted);
   line-height: 1.7;
 }
 
-@media (max-width: 900px) {
+.methodology-card {
+  padding: 20px;
+  margin-bottom: 8px;
+}
+
+.methodology-content p {
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.methodology-list {
+  margin: 0 0 16px;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.disclaimer {
+  font-size: 14px;
+}
+
+.stat-value.risk-low {
+  color: var(--low);
+}
+
+.stat-value.risk-moderate {
+  color: var(--moderate);
+}
+
+.stat-value.risk-elevated {
+  color: var(--elevated);
+}
+
+.stat-value.risk-high {
+  color: var(--high);
+}
+
+@media (max-width: 960px) {
   .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .insight-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 640px) {
+  .tool-shell {
+    padding: 14px;
+  }
+
+  .hero-card {
+    padding: 20px;
+  }
+
+  .hero-card h1 {
+    font-size: 28px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
+  .stat-value {
     font-size: 26px;
   }
 
+  .stat-value-small {
+    font-size: 20px;
+  }
+
   .chart-wrap {
-    height: 300px;
+    height: 320px;
+  }
+
+  .section-head h2 {
+    font-size: 22px;
   }
 }
