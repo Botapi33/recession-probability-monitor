@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "indicator": "BondStats Recession Probability Monitor",
+    "country": "United States",
+    "frequency": "monthly",
+    "unit_spreads": "percentage points",
+    "model_version": "1.0",
+    "last_updated": "2026-03-14"
+  },
+  "series": [
+    {
+      "date": "2023-01-03",
+      "spread_10y_3m": -1.08,
+      "spread_10y_2y": -0.69
+    },
+    {
+      "date": "2023-04-03",
+      "spread_10y_3m": -1.55,
+      "spread_10y_2y": -0.58
+    },
+    {
+      "date": "2023-07-03",
+      "spread_10y_3m": -1.45,
+      "spread_10y_2y": -0.95
+    },
+    {
+      "date": "2023-10-02",
+      "spread_10y_3m": -1.32,
+      "spread_10y_2y": -0.33
+    },
+    {
+      "date": "2024-01-02",
+      "spread_10y_3m": -1.10,
+      "spread_10y_2y": -0.37
+    },
+    {
+      "date": "2024-04-01",
+      "spread_10y_3m": -1.18,
+      "spread_10y_2y": -0.42
+    },
+    {
+      "date": "2024-06-03",
+      "spread_10y_3m": -1.10,
+      "spread_10y_2y": -0.41
+    },
+    {
+      "date": "2024-09-03",
+      "spread_10y_3m": -0.72,
+      "spread_10y_2y": -0.26
+    },
+    {
+      "date": "2025-01-02",
+      "spread_10y_3m": -0.66,
+      "spread_10y_2y": -0.22
+    },
+    {
+      "date": "2025-06-02",
+      "spread_10y_3m": -0.30,
+      "spread_10y_2y": -0.08
+    },
+    {
+      "date": "2025-09-02",
+      "spread_10y_3m": -0.12,
+      "spread_10y_2y": 0.08
+    },
+    {
+      "date": "2026-02-02",
+      "spread_10y_3m": 0.05,
+      "spread_10y_2y": 0.14
+    }
+  ]
+}
