@@ -17,8 +17,13 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--text);
@@ -63,7 +68,7 @@ body {
 
 .hero-text {
   margin: 0;
-  max-width: 760px;
+  max-width: 780px;
   color: var(--muted);
   line-height: 1.65;
   font-size: 16px;
