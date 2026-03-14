@@ -4,58 +4,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recession Probability Monitor | BondStats</title>
-  <meta name="description" content="Track estimated US recession probability based on Treasury yield curve signals." />
+  <meta
+    name="description"
+    content="Track the estimated US recession probability based on Treasury yield curve signals including the 10Y–3M and 10Y–2Y spreads."
+  />
+
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="tool-shell">
-    <header class="hero">
+    <header class="hero-card">
       <p class="eyebrow">BondStats Tool</p>
       <h1>Recession Probability Monitor</h1>
       <p class="hero-text">
-        Track an estimated recession probability based on key US Treasury yield curve signals, including the 10Y–3M and 10Y–2Y spreads.
+        Track an estimated US recession probability based on key Treasury yield curve signals.
+        The model uses the shape of the curve, with a focus on the 10Y–3M and 10Y–2Y spreads.
       </p>
     </header>
 
     <section class="stats-grid">
-      <div class="stat-card">
-        <span class="label">Estimated Probability</span>
-        <strong id="probabilityValue">--%</strong>
-      </div>
+      <article class="stat-card stat-card-primary">
+        <span class="stat-label">Estimated Probability (12M)</span>
+        <strong id="probabilityValue" class="stat-value">--%</strong>
+      </article>
 
-      <div class="stat-card">
-        <span class="label">Risk Level</span>
-        <strong id="riskLevel">--</strong>
-      </div>
+      <article class="stat-card">
+        <span class="stat-label">Risk Level</span>
+        <strong id="riskLevel" class="stat-value">--</strong>
+      </article>
 
-      <div class="stat-card">
-        <span class="label">10Y–3M Spread</span>
-        <strong id="spread3m">--</strong>
-      </div>
+      <article class="stat-card">
+        <span class="stat-label">10Y–3M Spread</span>
+        <strong id="spread3m" class="stat-value">--</strong>
+      </article>
 
-      <div class="stat-card">
-        <span class="label">10Y–2Y Spread</span>
-        <strong id="spread2y">--</strong>
-      </div>
+      <article class="stat-card">
+        <span class="stat-label">10Y–2Y Spread</span>
+        <strong id="spread2y" class="stat-value">--</strong>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-label">Latest Date</span>
+        <strong id="latestDate" class="stat-value stat-value-small">--</strong>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-label">Model Version</span>
+        <strong id="modelVersion" class="stat-value stat-value-small">--</strong>
+      </article>
     </section>
 
     <section class="chart-card">
-      <h2>Estimated Recession Probability History</h2>
+      <div class="section-head">
+        <h2>Probability History</h2>
+        <p>
+          Historical estimated recession probability derived from US Treasury yield curve conditions.
+        </p>
+      </div>
       <div class="chart-wrap">
         <canvas id="probabilityChart"></canvas>
       </div>
     </section>
 
+    <section class="insight-grid">
+      <article class="info-card">
+        <h3>Current Interpretation</h3>
+        <p id="currentInterpretation">
+          --
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>How to Read This Indicator</h3>
+        <p>
+          Higher recession probability readings generally reflect a flatter or more inverted Treasury yield curve.
+          A positive and normally sloped curve tends to correspond with lower recession risk readings.
+        </p>
+      </article>
+    </section>
+
     <section class="methodology-card">
-      <h2>Methodology</h2>
-      <p>
-        This indicator is a BondStats model based on the shape of the US Treasury yield curve.
-        It uses the 10Y–3M and 10Y–2Y spreads as recession-related market signals.
-      </p>
-      <p>
-        The model is designed as an informational macro indicator and should not be interpreted as an official forecast or investment advice.
-      </p>
+      <div class="section-head">
+        <h2>Methodology</h2>
+      </div>
+
+      <div class="methodology-content">
+        <p>
+          The Recession Probability Monitor is a BondStats macro indicator based on the shape of the US Treasury yield curve.
+          It uses the 10Y–3M and 10Y–2Y spreads as recession-related market signals.
+        </p>
+
+        <p>
+          The model estimates recession risk by assigning greater weight to deeper yield curve inversions,
+          especially in the 10Y–3M spread, which has historically been one of the most closely watched recession indicators.
+        </p>
+
+        <ul class="methodology-list">
+          <li>Indicator focus: US Treasury yield curve structure</li>
+          <li>Main inputs: 10Y–3M spread and 10Y–2Y spread</li>
+          <li>Output: Estimated recession probability over the next 12 months</li>
+          <li>Use case: Macro monitoring and educational analysis</li>
+        </ul>
+
+        <p class="disclaimer">
+          This is a BondStats model for informational and educational purposes only.
+          It is not an official forecast and should not be interpreted as investment advice.
+        </p>
+      </div>
     </section>
   </div>
 
