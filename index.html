@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recession Probability Monitor | BondStats</title>
+  <meta name="description" content="Track estimated US recession probability based on Treasury yield curve signals." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="tool-shell">
+    <header class="hero">
+      <p class="eyebrow">BondStats Tool</p>
+      <h1>Recession Probability Monitor</h1>
+      <p class="hero-text">
+        Track an estimated recession probability based on key US Treasury yield curve signals, including the 10Y–3M and 10Y–2Y spreads.
+      </p>
+    </header>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="label">Estimated Probability</span>
+        <strong id="probabilityValue">--%</strong>
+      </div>
+
+      <div class="stat-card">
+        <span class="label">Risk Level</span>
+        <strong id="riskLevel">--</strong>
+      </div>
+
+      <div class="stat-card">
+        <span class="label">10Y–3M Spread</span>
+        <strong id="spread3m">--</strong>
+      </div>
+
+      <div class="stat-card">
+        <span class="label">10Y–2Y Spread</span>
+        <strong id="spread2y">--</strong>
+      </div>
+    </section>
+
+    <section class="chart-card">
+      <h2>Estimated Recession Probability History</h2>
+      <div class="chart-wrap">
+        <canvas id="probabilityChart"></canvas>
+      </div>
+    </section>
+
+    <section class="methodology-card">
+      <h2>Methodology</h2>
+      <p>
+        This indicator is a BondStats model based on the shape of the US Treasury yield curve.
+        It uses the 10Y–3M and 10Y–2Y spreads as recession-related market signals.
+      </p>
+      <p>
+        The model is designed as an informational macro indicator and should not be interpreted as an official forecast or investment advice.
+      </p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
